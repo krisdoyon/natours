@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisdoyon/natours.git"
+  },
+  "author": "Kris Doyon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krisdoyon/natours/issues"
+  },
+  "homepage": "https://github.com/krisdoyon/natours#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}
