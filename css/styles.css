@@ -334,7 +334,7 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 4.4rem;
+  padding: 25rem 4.4rem 15rem 4.4rem;
   display: flex;
   gap: 10rem;
   flex-direction: column;
