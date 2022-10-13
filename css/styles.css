@@ -140,6 +140,10 @@ body {
   background-color: #fff;
   color: #777;
 }
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+}
 .btn--animated {
   animation: moveInBottom 1.5s ease-out 0.75s;
   animation-fill-mode: backwards;
