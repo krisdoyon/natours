@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  margin: -20vh auto 0 auto;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  gap: 8rem;
+  h2 {
+    grid-column: 1/-1;
+  }
+}
+
+.about {
+  &__text-box {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+  }
+}

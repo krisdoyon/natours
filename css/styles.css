@@ -86,6 +86,39 @@ body {
   animation: moveInRight 1.5s ease-out;
 }
 
+.heading-secondary {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewX(20deg) skewY(2deg) scale(1.05);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  text-transform: uppercase;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4rem;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 8rem;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -133,6 +166,61 @@ body {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 } */
+.btn--text:link, .btn--text:visited {
+  color: #55c57a;
+  background-color: transparent;
+  font-size: 2rem;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding-bottom: 0.6rem;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.btn--text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.15);
+}
+.btn--text:focus {
+  transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+  width: 100%;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.2s;
+  z-index: 1;
+  outline-offset: 1rem;
+}
+.composition__photo--1 {
+  top: -2rem;
+  left: 0;
+}
+.composition__photo--2 {
+  right: 0;
+  top: 4rem;
+}
+.composition__photo--3 {
+  left: 20%;
+  top: 12.5rem;
+}
+.composition__photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  outline: 1rem solid #55c57a;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -157,6 +245,29 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: -9.6rem;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  margin: -20vh auto 0 auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 35%);
+  justify-content: center;
+  gap: 8rem;
+}
+.section-about h2 {
+  grid-column: 1/-1;
+}
+
+.about__text-box {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
