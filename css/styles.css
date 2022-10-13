@@ -226,7 +226,7 @@ body {
   background-image: linear-gradient(to bottom right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   position: relative;
   display: flex;
   justify-content: center;
@@ -244,12 +244,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -9.6rem;
+  margin-top: -5%;
 }
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 25rem 0 35rem 0;
   margin-top: -20vh;
   margin: -20vh auto 0 auto;
   display: grid;
@@ -268,6 +268,68 @@ body {
   flex-direction: column;
   align-items: start;
   gap: 2rem;
+}
+
+.section-features {
+  padding: 40rem 8rem;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-6.jpg);
+  background-position: top;
+  display: flex;
+  justify-content: center;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  transform: translateY(-20%);
+}
+
+.features-grid {
+  display: grid;
+  max-width: 140rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6rem;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 1.8rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+.feature-card:hover {
+  transform: translateY(-1.6rem) scale(1.05);
+}
+.feature-card__icon {
+  height: 6rem;
+  width: 6rem;
+  background-image: linear-gradient(to left, #28b485, #7ed56f);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.feature-card__icon--earth {
+  -webkit-mask-image: url(../img/earth.svg);
+  mask-image: url(../img/earth.svg);
+}
+.feature-card__icon--compass {
+  -webkit-mask-image: url(../img/compass.svg);
+  mask-image: url(../img/compass.svg);
+}
+.feature-card__icon--map {
+  -webkit-mask-image: url(../img/map.svg);
+  mask-image: url(../img/map.svg);
+}
+.feature-card__icon--heart {
+  -webkit-mask-image: url(../img/heart.svg);
+  mask-image: url(../img/heart.svg);
+}
+.feature-card__text {
+  text-align: center;
+  font-size: 1.7rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
