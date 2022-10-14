@@ -1,15 +1,21 @@
 @use "../abstracts" as *;
 
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 1000rem;
-    padding: 1.6rem 3rem;
+    padding: 1.6rem 4rem;
     display: inline-block;
     transition: all 0.5s;
     position: relative;
+    font-size: 1.8rem;
+
+    //Change for button element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
