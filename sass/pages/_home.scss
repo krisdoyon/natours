@@ -426,3 +426,47 @@
     opacity: 1;
   }
 }
+
+.footer {
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+
+  &__logo {
+    padding: 5rem 0 6rem 0;
+  }
+
+  &__nav {
+    border-top: 1px #eee solid;
+    border-top-width: 5%;
+    padding: 5rem 0;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  &__item {
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: #f7f7f7;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 2rem 4rem;
+    transition: all 0.2s;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: lighten(#333, 15%);
+      transform: translateY(-1rem);
+    }
+  }
+}
