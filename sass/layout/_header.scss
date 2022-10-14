@@ -23,6 +23,11 @@
 
   &__logo {
     height: 3.6rem;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__text-box {
