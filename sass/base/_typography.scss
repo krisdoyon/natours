@@ -8,6 +8,10 @@ body {
   color: $color-grey-dark;
   padding: 3rem;
   box-sizing: border-box;
+
+  @include respond(phone) {
+    padding: 0;
+  }
 }
 
 .heading-primary {
@@ -15,6 +19,7 @@ body {
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
+  text-align: center;
 
   &--main {
     display: block;
@@ -23,6 +28,11 @@ body {
     letter-spacing: 3.5rem;
     margin-right: -3.5rem;
     animation: moveInLeft 1.5s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      margin-right: -1rem;
+    }
   }
 
   &--sub {
@@ -32,6 +42,11 @@ body {
     letter-spacing: 1.75rem;
     margin-right: -1.75rem;
     animation: moveInRight 1.5s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      margin-right: -0.5rem;
+    }
   }
 }
 

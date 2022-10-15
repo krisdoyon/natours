@@ -16,6 +16,11 @@
     cursor: pointer;
     overflow: hidden;
 
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
+
     &-bar {
       height: 2px;
       width: 100%;
@@ -49,6 +54,11 @@
     top: 6.4rem;
     z-index: 998;
     transition: transform 0.75s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__nav {
@@ -146,15 +156,28 @@
 
 .section-about {
   background-color: $color-grey-light-1;
-  padding: 25rem 0;
-
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(2, 35%);
+  padding: 25rem 4rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 8rem;
+
   h2 {
     grid-column: 1/-1;
+    text-align: center;
+  }
+}
+
+.about-grid {
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  justify-content: center;
+  gap: 8rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+    max-width: 60rem;
   }
 }
 
@@ -169,7 +192,7 @@
 }
 
 .section-features {
-  padding: 40rem 8rem;
+  padding: 40rem 2rem;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -180,13 +203,31 @@
   background-position: center;
   display: flex;
   justify-content: center;
+
+  @include respond(phone) {
+    padding: 30rem 6rem;
+  }
 }
 
 .features-grid {
   display: grid;
   max-width: 140rem;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6rem;
+  gap: 4rem;
+
+  @include respond(tab-land) {
+    max-width: 80rem;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    gap: 4rem;
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature-card {
@@ -253,20 +294,31 @@
   gap: 10rem;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .tours-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(30rem, 50rem));
+  grid-template-columns: repeat(3, minmax(10rem, 50rem));
   margin: 0 auto;
   gap: 8rem;
   max-width: 130rem;
+
+  @include respond(tab-land) {
+    gap: 4rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: minmax(10rem, 45rem);
+    gap: 8rem;
+  }
 }
 
 .tour-card {
   position: relative;
   height: 70rem;
   perspective: 100rem;
+  width: 100%;
 
   &__side {
     height: 70rem;
@@ -354,7 +406,7 @@
   }
 
   &__heading {
-    font-size: 3.2rem;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: 300;
     color: $color-white;
@@ -435,6 +487,116 @@
     font-size: 6.4rem;
     font-weight: 300;
   }
+
+  @include respond(tab-port) {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1.6rem 3.6rem rgba($color-black, 0.2);
+    background-color: #fff;
+
+    &__side {
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        gap: 4rem;
+        height: auto;
+        padding: 8rem 0 6rem 0;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__heading {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: $color-white;
+      position: absolute;
+      top: 20rem;
+      right: 2rem;
+      text-align: right;
+      width: 75%;
+    }
+
+    &__heading-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.85),
+          rgba($color-primary-dark, 0.85)
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-tertiary-light, 0.85),
+          rgba($color-tertiary-dark, 0.85)
+        );
+      }
+    }
+
+    &__details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 55%;
+      font-size: 1.8rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        width: 80%;
+        text-align: center;
+
+        li {
+          padding: 1.5rem 0;
+        }
+
+        li:not(:last-child) {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+
+    &__price-box {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    &__price-only {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    &__price-value {
+      font-size: 6.4rem;
+      font-weight: 300;
+    }
+  }
 }
 
 .section-stories {
@@ -442,8 +604,14 @@
   flex-direction: column;
   align-items: center;
   gap: 10rem;
-  padding: 15rem 0;
+  padding: 15rem 6rem;
   position: relative;
+
+  h2 {
+    @include respond(phone) {
+      text-align: center;
+    }
+  }
 }
 
 .section-cta {
@@ -453,6 +621,14 @@
     $color-primary-dark
   );
   padding: 15rem 4rem;
+
+  @include respond(tab-port) {
+    padding: 15rem 10rem;
+  }
+
+  @include respond(phone) {
+    padding: 15rem 4rem;
+  }
 }
 
 .cta {
@@ -470,14 +646,49 @@
   max-width: 130rem;
   padding: 6rem 6rem 7.2rem 6rem;
   box-shadow: 0 1.6rem 3.2rem rgba($color-black, 0.2);
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.85) 0%,
+        rgba($color-white, 0.85) 60%,
+        transparent 60%
+      ),
+      url(../img/nat-10.jpg);
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.85) 0%,
+        rgba($color-white, 0.85) 100%,
+        transparent 100%
+      ),
+      url(../img/nat-10.jpg);
+  }
 }
 
 .cta-form {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
+
+  @include respond(phone) {
+    align-items: center;
+  }
+
+  h2 {
+    @include respond(tab-land) {
+      font-size: 3.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
 
   &__group {
     width: 100%;
@@ -491,8 +702,20 @@
     border-radius: 4px;
     transition: all 0.2s;
     border-bottom: solid 3px transparent;
-    width: 90%;
+    width: 45%;
     color: inherit;
+
+    @include respond(tab-land) {
+      width: 55%;
+    }
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;
@@ -528,6 +751,11 @@
   &__radio-box {
     display: flex;
     gap: 4rem;
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-self: flex-start;
+    }
   }
 
   &__radio-input {
@@ -576,10 +804,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
   padding: 5rem 0;
+
+  @include respond(phone) {
+    padding: 5rem;
+  }
 
   &__logo {
     padding: 5rem 0 6rem 0;
+    width: 15rem;
+
+    @include respond(phone) {
+      width: 30rem;
+    }
   }
 
   &__nav {
@@ -592,9 +830,17 @@
     list-style: none;
     display: flex;
     gap: 1.2rem;
-  }
 
-  &__item {
+    @include respond(tab-land) {
+      gap: 0;
+    }
+
+    @include respond(phone) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      justify-items: center;
+    }
   }
 
   &__link:link,
@@ -607,10 +853,15 @@
     padding: 2rem 4rem;
     transition: all 0.2s;
     border-radius: 4px;
+    text-align: center;
 
     &:hover {
       background-color: lighten(#333, 15%);
       transform: translateY(-1rem);
+    }
+
+    @include respond(tab-port) {
+      padding: 1rem 1.6rem;
     }
   }
 }

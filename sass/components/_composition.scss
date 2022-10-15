@@ -3,6 +3,7 @@
 .composition {
   position: relative;
   width: 100%;
+  justify-self: center;
 
   &__photo {
     width: 55%;
@@ -13,19 +14,39 @@
     z-index: 1;
     outline-offset: 1rem;
 
+    @include respond(tab-land) {
+      width: 33%;
+      position: relative;
+      float: left;
+    }
+
     &--1 {
       top: -2rem;
       left: 0;
+
+      @include respond(tab-land) {
+        left: -2rem;
+      }
     }
 
     &--2 {
       right: 0;
       top: 4rem;
+
+      @include respond(tab-land) {
+        top: 0rem;
+        left: 0rem;
+      }
     }
 
     &--3 {
       left: 20%;
       top: 12.5rem;
+
+      @include respond(tab-land) {
+        top: 2rem;
+        left:2rem;
+      }
     }
 
     &:hover {
